@@ -1,17 +1,15 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
-import Login from './components/Login'
+import React, { useState } from 'react';
+import Login from './Login';
 
-function App() {
+const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <>
-     <Login></Login>
-    </>
-  )
-}
+    <Login
+      isLoggedIn={isLoggedIn}
+      setIsLoggedIn={setIsLoggedIn}
+    />
+  );
+};
 
-export default App
+export default App;
