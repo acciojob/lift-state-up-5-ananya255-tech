@@ -1,12 +1,16 @@
+import { useState } from 'react'
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
+import Login from './components/Login'
 
-import React from "react";
-import './../styles/App.css';
+function App() {
 
-const App = () => {
   return (
-    <div>
-        {/* Do not remove the main div */}
-    </div>
+    <>
+     <Login></Login>
+    </>
   )
 }
 
