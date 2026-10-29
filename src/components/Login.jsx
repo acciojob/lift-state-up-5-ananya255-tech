@@ -1,33 +1,32 @@
+import React from 'react';
 
-import React, { useState } from 'react';
+const Login = ({ isLoggedIn, setIsLoggedIn }) => {
+  if (isLoggedIn) {
+    return <h2>You are logged in!</h2>;
+  } else {
+    return (
+      <div>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            setIsLoggedIn(true);
+          }}
+        >
+          <label>Username: </label>
+          <input type="text" required />
 
+          <br /><br />
 
-const Login = () => {
+          <label>Password: </label>
+          <input type="password" required />
 
-    const [islogin, setIslogin] = useState(false);
-    
-    if(islogin){
-        return <h2>You are logged in!</h2>;
-    }else{
-  return (
-    <div>
-      <form onSubmit={(e)=>{
-      e.preventDefault();
-        setIslogin(true);
-      }}>
-        <label>Username: </label>
-        <input type="text" required></input>
-    <br></br>
-    <br></br>
-        <label>Password: </label>
-        <input type="password" required></input>
-<br></br>
-<br></br>
-        <button value="sumbit">Submit</button>
-      </form>
-    </div>
-    
-  )
-}}
+          <br /><br />
 
-export default Login
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    );
+  }
+};
+
+export default Login;
